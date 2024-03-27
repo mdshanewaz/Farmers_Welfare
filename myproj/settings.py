@@ -33,7 +33,6 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -48,8 +47,13 @@ INSTALLED_APPS = [
     'LoginApp',
 ]
 
+
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+# Custome User model
+AUTH_USER_MODEL = "LoginApp.CustomUesr"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -126,14 +130,16 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [STATIC_DIR,]
 
 # Media Files
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = MEDIA_DIR
+
+
+# Login Url
+LOGIN_URL = '/account/login/'
 
 
 # Default primary key field type
